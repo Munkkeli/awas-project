@@ -1,0 +1,34 @@
+html
+  head
+    title Twatter
+  body
+    h1 Twatter
+    if user.isAdmin
+      p admin view
+
+    div
+      a(href="/logout") Logout
+
+    div
+      ul
+        each post, index in postList
+          li
+            p= post.text
+              br
+              small= '@' + post.owner
+              span(style="margin: 0 8px;") -
+              small= post.createdAt
+              if user.isAdmin || post.owner === user.username
+                form(action="/remove-post" method="POST")
+                  input(type="hidden" name="index" value= index)
+                  button(type="submit") Delete
+    div
+      br
+      form(action="/post" method="POST")
+        label Message
+        br
+        input(type="text" name="message")
+        br
+
+        button(type="submit") Post
+        br

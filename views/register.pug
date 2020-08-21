@@ -1,0 +1,30 @@
+html
+  head
+    title Twatter - Register
+  body
+    form(action="/register" method="POST")
+      label Username
+      br
+      input(type="text" name="username")
+      br
+
+      label Password
+      br
+      input(type="password" name="password")
+      br
+
+      label Re-Password
+      br
+      input(type="password" name="re_password")
+      br
+
+      input(type="checkbox" name="is_admin" style="visibility: hidden;")
+      br
+
+      button(type="submit") Register
+
+      br
+      br
+      br
+
+      a(href="/login") Already have an account? Login here!

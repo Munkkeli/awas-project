@@ -1,0 +1,25 @@
+html
+  head
+    title Twatter - Login
+  body
+    form(action="/login" method="POST")
+      label Username
+      br
+      input(type="text" name="username")
+      br
+
+      label Password
+      br
+      input(type="password" name="password")
+      br
+      br
+
+      p= message
+
+      button(type="submit") Login
+
+      br
+      br
+      br
+
+      a(href="/register") No account yet? Register here!
